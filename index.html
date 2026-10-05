@@ -552,14 +552,14 @@
   <!-- Countdown and automatic redirect -->
   <script>
     (() => {
-      const button = document.getElementById("get-started");
+    //  const button = document.getElementById("get-started");
       const timerBox = document.getElementById("timer-box");
       const secondsElement = document.getElementById("seconds");
       const message = document.getElementById("timer-message");
-      const fill = document.getElementById("timer-fill");
+     // const fill = document.getElementById("timer-fill");
 
       const redirectURL = button.href;
-      const duration = 5000;
+   //  const duration = 5000;
       const deadline = Date.now() + duration;
       let lastSecond = 5;
       let redirected = false;
@@ -577,59 +577,36 @@
           lastSecond = seconds;
         }
 
-        if (remaining === 0 && !redirected) {
+        //if (remaining === 0 && !redirected) {
           redirected = true;
           window.clearInterval(interval);
           message.textContent = "Redirecting now…";
           window.location.replace(redirectURL);
         }
-      }, 100);
+    //  }, 100);
 
-      button.addEventListener("click", () => {
-        window.clearInterval(interval);
-      });
+      //button.addEventListener("click", () => {
+      //  window.clearInterval(interval);
+     // });
     })();
   </script>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s) {
-      if(f.fbq)return;
-      n=f.fbq=function() {
-        n.callMethod
-          ? n.callMethod.apply(n,arguments)
-          : n.queue.push(arguments);
-      };
-      if(!f._fbq)f._fbq=n;
-      n.push=n;
-      n.loaded=!0;
-      n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);
-      t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s);
-    }(
-      window,
-      document,
-      'script',
-      'https://connect.facebook.net/en_US/fbevents.js'
-    );
-
-    fbq('init', '27818248751136004');
-    fbq('track', 'PageView');
-  </script>
-
-  <noscript>
-    <img
-      height="1"
-      width="1"
-      style="display:none"
-      src="https://www.facebook.com/tr?id=27818248751136004&amp;ev=PageView&amp;noscript=1"
-      alt=""
-    >
-  </noscript>
-  <!-- End Meta Pixel Code -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1079434511580914');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1079434511580914&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>

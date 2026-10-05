@@ -13,16 +13,16 @@
 
   <style>
     :root {
-      --bg1: #1a1f6b;
-      --bg2: #3b2a9c;
-      --bg3: #7a3fb5;
-      --ink: #f6f3ff;
-      --muted: #c3bfe6;
-      --accent: #ffc53d;
-      --accent-2: #ff8a5c;
-      --on-accent: #241a00;
-      --glass: rgba(255,255,255,.08);
-      --line: rgba(255,255,255,.16);
+      --bg1: #064e3b;
+      --bg2: #065f46;
+      --bg3: #047857;
+      --ink: #ecfdf5;
+      --muted: #a7f3d0;
+      --accent: #fbbf24;
+      --accent-2: #f59e0b;
+      --on-accent: #1c1917;
+      --glass: rgba(255,255,255,.10);
+      --line: rgba(255,255,255,.18);
     }
 
     *, *::before, *::after {
@@ -57,7 +57,7 @@
       position: fixed;
       border-radius: 50%;
       filter: blur(70px);
-      opacity: .45;
+      opacity: .40;
       pointer-events: none;
       z-index: 0;
     }
@@ -65,7 +65,7 @@
     .o1 {
       width: min(420px, 50vw);
       height: min(420px, 50vw);
-      background: var(--accent-2);
+      background: #fbbf24;
       top: -90px;
       left: -80px;
       animation: float1 14s ease-in-out infinite;
@@ -74,7 +74,7 @@
     .o2 {
       width: min(460px, 55vw);
       height: min(460px, 55vw);
-      background: #5c7cff;
+      background: #34d399;
       bottom: -120px;
       right: -100px;
       animation: float2 17s ease-in-out infinite;
@@ -194,7 +194,7 @@
       font-weight: 800;
       text-transform: uppercase;
       font-size: clamp(10px, 1.9vh, 16px);
-      box-shadow: 0 10px 30px rgba(255,138,92,.35);
+      box-shadow: 0 10px 30px rgba(251,191,36,.35);
       opacity: 0;
       animation: fade .8s 1.2s forwards;
     }
@@ -209,8 +209,8 @@
     }
 
     @keyframes ping {
-      0% { box-shadow: 0 0 0 0 rgba(36,26,0,.5); }
-      80%, 100% { box-shadow: 0 0 0 10px rgba(36,26,0,0); }
+      0% { box-shadow: 0 0 0 0 rgba(28,25,23,.5); }
+      80%, 100% { box-shadow: 0 0 0 10px rgba(28,25,23,0); }
     }
 
     h2 {
@@ -335,7 +335,7 @@
       letter-spacing: .12em;
       color: var(--on-accent);
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      box-shadow: 0 14px 40px rgba(255,197,61,.3);
+      box-shadow: 0 14px 40px rgba(251,191,36,.35);
       animation: pulse 3s 3s ease-in-out infinite;
       transition: transform .2s;
     }
@@ -369,7 +369,7 @@
     }
 
     @keyframes pulse {
-      50% { box-shadow: 0 14px 50px rgba(255,138,92,.55); }
+      50% { box-shadow: 0 14px 50px rgba(245,158,11,.55); }
     }
 
     .ads {

@@ -1,595 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Ready Anna – Learn with 24-hour mentor support</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ready Anna – Learn with 24-hour mentor support</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap"
+rel="stylesheet"
+>
 
-  <style>
-    :root {
-      --bg1: #064e3b;
-      --bg2: #065f46;
-      --bg3: #047857;
-      --ink: #ecfdf5;
-      --muted: #a7f3d0;
-      --accent: #fbbf24;
-      --accent-2: #f59e0b;
-      --on-accent: #1c1917;
-      --glass: rgba(255,255,255,.10);
-      --line: rgba(255,255,255,.18);
-    }
+<style>
+:root {
+--bg1: #064e3b;
+--bg2: #065f46;
+--bg3: #047857;
+--ink: #ecfdf5;
+--muted: #a7f3d0;
+--accent: #fbbf24;
+--accent-2: #f59e0b;
+--on-accent: #1c1917;
+--glass: rgba(255,255,255,.10);
+--line: rgba(255,255,255,.18);
+}
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+*, *::before, *::after {
+box-sizing: border-box;
+}
 
-    html {
-      min-height: 100%;
-    }
+html {
+min-height: 100%;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-height: 100dvh;
-      overflow-x: hidden;
-      color: var(--ink);
-      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-      background: linear-gradient(
-        135deg, var(--bg1), var(--bg2), var(--bg3), var(--bg1)
-      );
-      background-size: 300% 300%;
-      animation: drift 18s ease-in-out infinite;
-      position: relative;
-    }
+body {
+margin: 0;
+min-height: 100vh;
+min-height: 100dvh;
+overflow-x: hidden;
+color: var(--ink);
+font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+background: linear-gradient(
+135deg, var(--bg1), var(--bg2), var(--bg3), var(--bg1)
+);
+background-size: 300% 300%;
+animation: drift 18s ease-in-out infinite;
+position: relative;
+}
 
-    @keyframes drift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
+@keyframes drift {
+0%, 100% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+}
 
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: .40;
-      pointer-events: none;
-      z-index: 0;
-    }
+.orb {
+position: fixed;
+border-radius: 50%;
+filter: blur(70px);
+opacity: .40;
+pointer-events: none;
+z-index: 0;
+}
 
-    .o1 {
-      width: min(420px, 50vw);
-      height: min(420px, 50vw);
-      background: #fbbf24;
-      top: -90px;
-      left: -80px;
-      animation: float1 14s ease-in-out infinite;
-    }
+.o1 {
+width: min(420px, 50vw);
+height: min(420px, 50vw);
+background: #fbbf24;
+top: -90px;
+left: -80px;
+animation: float1 14s ease-in-out infinite;
+}
 
-    .o2 {
-      width: min(460px, 55vw);
-      height: min(460px, 55vw);
-      background: #34d399;
-      bottom: -120px;
-      right: -100px;
-      animation: float2 17s ease-in-out infinite;
-    }
+.o2 {
+width: min(460px, 55vw);
+height: min(460px, 55vw);
+background: #34d399;
+bottom: -120px;
+right: -100px;
+animation: float2 17s ease-in-out infinite;
+}
 
-    @keyframes float1 {
-      50% { transform: translate(90px, 70px) scale(1.15); }
-    }
+@keyframes float1 {
+50% { transform: translate(90px, 70px) scale(1.15); }
+}
 
-    @keyframes float2 {
-      50% { transform: translate(-80px, -60px) scale(1.1); }
-    }
+@keyframes float2 {
+50% { transform: translate(-80px, -60px) scale(1.1); }
+}
 
-    main {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      min-height: 100dvh;
-      max-width: 640px;
-      margin: 0 auto;
-      padding:
-        max(20px, env(safe-area-inset-top, 0px))
-        16px
-        max(20px, env(safe-area-inset-bottom, 0px));
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
+main {
+position: relative;
+z-index: 1;
+min-height: 100vh;
+min-height: 100dvh;
+max-width: 640px;
+margin: 0 auto;
+padding:
+max(20px, env(safe-area-inset-top, 0px))
+16px
+max(20px, env(safe-area-inset-bottom, 0px));
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+}
 
-    h1 {
-      font-family: Montserrat, sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: clamp(30px, min(10.5vw, 8vh), 76px);
-      line-height: 1.05;
-      margin: 0;
-      letter-spacing: .01em;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0 .28em;
-    }
+h1 {
+font-family: Montserrat, sans-serif;
+font-weight: 800;
+text-transform: uppercase;
+font-size: clamp(30px, min(10.5vw, 8vh), 76px);
+line-height: 1.05;
+margin: 0;
+letter-spacing: .01em;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 0 .28em;
+}
 
-    h1 .w {
-      display: inline-flex;
-      overflow: hidden;
-      padding-bottom: .08em;
-    }
+h1 .w {
+display: inline-flex;
+overflow: hidden;
+padding-bottom: .08em;
+}
 
-    h1 .c {
-      display: inline-block;
-      transform: translateY(105%);
-      animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards;
-      animation-delay: calc(var(--i) * 55ms);
-    }
+h1 .c {
+display: inline-block;
+transform: translateY(105%);
+animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards;
+animation-delay: calc(var(--i) * 55ms);
+}
 
-    @keyframes rise {
-      to { transform: none; }
-    }
+@keyframes rise {
+to { transform: none; }
+}
 
-    h1 .w:last-child .c {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+h1 .w:last-child .c {
+background: linear-gradient(90deg, var(--accent), var(--accent-2));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
 
-    .since {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(8px, 1.5vh, 14px);
-      margin: clamp(2px, 1vh, 10px) 0 0;
-      color: var(--accent);
-      font-family: Montserrat, sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: clamp(10px, 1.7vh, 14px);
-      letter-spacing: .28em;
-      opacity: 0;
-      animation: fade .8s .9s forwards;
-    }
+.since {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: clamp(8px, 1.5vh, 14px);
+margin: clamp(2px, 1vh, 10px) 0 0;
+color: var(--accent);
+font-family: Montserrat, sans-serif;
+font-weight: 700;
+text-transform: uppercase;
+font-size: clamp(10px, 1.7vh, 14px);
+letter-spacing: .28em;
+opacity: 0;
+animation: fade .8s .9s forwards;
+}
 
-    .since::before,
-    .since::after {
-      content: "";
-      width: clamp(24px, 6vw, 48px);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent));
-    }
+.since::before,
+.since::after {
+content: "";
+width: clamp(24px, 6vw, 48px);
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--accent));
+}
 
-    .since::after {
-      transform: scaleX(-1);
-    }
+.since::after {
+transform: scaleX(-1);
+}
 
-    .tag {
-      margin: clamp(8px, 2.4vh, 24px) 0 0;
-      font-size: clamp(12px, 2.2vh, 19px);
-      font-weight: 600;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fade .8s 1.05s forwards;
-    }
+.tag {
+margin: clamp(8px, 2.4vh, 24px) 0 0;
+font-size: clamp(12px, 2.2vh, 19px);
+font-weight: 600;
+text-transform: uppercase;
+opacity: 0;
+animation: fade .8s 1.05s forwards;
+}
 
-    .pill {
-      align-self: center;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: clamp(8px, 2vh, 18px);
-      padding: clamp(8px, 1.5vh, 14px) clamp(14px, 4vw, 30px);
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: var(--on-accent);
-      font-family: Montserrat, sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: clamp(10px, 1.9vh, 16px);
-      box-shadow: 0 10px 30px rgba(251,191,36,.35);
-      opacity: 0;
-      animation: fade .8s 1.2s forwards;
-    }
+.pill {
+align-self: center;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+margin-top: clamp(8px, 2vh, 18px);
+padding: clamp(8px, 1.5vh, 14px) clamp(14px, 4vw, 30px);
+border-radius: 999px;
+background: linear-gradient(90deg, var(--accent), var(--accent-2));
+color: var(--on-accent);
+font-family: Montserrat, sans-serif;
+font-weight: 800;
+text-transform: uppercase;
+font-size: clamp(10px, 1.9vh, 16px);
+box-shadow: 0 10px 30px rgba(251,191,36,.35);
+opacity: 0;
+animation: fade .8s 1.2s forwards;
+}
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      flex: none;
-      border-radius: 50%;
-      background: var(--on-accent);
-      animation: ping 1.6s infinite;
-    }
+.dot {
+width: 8px;
+height: 8px;
+flex: none;
+border-radius: 50%;
+background: var(--on-accent);
+animation: ping 1.6s infinite;
+}
 
-    @keyframes ping {
-      0% { box-shadow: 0 0 0 0 rgba(28,25,23,.5); }
-      80%, 100% { box-shadow: 0 0 0 10px rgba(28,25,23,0); }
-    }
+@keyframes ping {
+0% { box-shadow: 0 0 0 0 rgba(28,25,23,.5); }
+80%, 100% { box-shadow: 0 0 0 10px rgba(28,25,23,0); }
+}
 
-    h2 {
-      font-family: Montserrat, sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: clamp(20px, 4.6vh, 40px);
-      margin: clamp(10px, 3.4vh, 40px) 0 clamp(2px, .6vh, 6px);
-      opacity: 0;
-      animation: fade .8s 1.35s forwards;
-    }
+h2 {
+font-family: Montserrat, sans-serif;
+font-weight: 800;
+text-transform: uppercase;
+font-size: clamp(20px, 4.6vh, 40px);
+margin: clamp(10px, 3.4vh, 40px) 0 clamp(2px, .6vh, 6px);
+opacity: 0;
+animation: fade .8s 1.35s forwards;
+}
 
-    .sub {
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(12px, 1.9vh, 17px);
-      opacity: 0;
-      animation: fade .8s 1.45s forwards;
-    }
+.sub {
+margin: 0;
+color: var(--muted);
+font-size: clamp(12px, 1.9vh, 17px);
+opacity: 0;
+animation: fade .8s 1.45s forwards;
+}
 
-    .feats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(6px, 2vw, 24px);
-      margin-top: clamp(10px, 3vh, 34px);
-    }
+.feats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: clamp(6px, 2vw, 24px);
+margin-top: clamp(10px, 3vh, 34px);
+}
 
-    .feat {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(6px, 1.3vh, 12px);
-      font-weight: 700;
-      font-size: clamp(9px, 1.6vh, 13px);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      opacity: 0;
-      animation: fade .8s forwards;
-    }
+.feat {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: clamp(6px, 1.3vh, 12px);
+font-weight: 700;
+font-size: clamp(9px, 1.6vh, 13px);
+text-transform: uppercase;
+letter-spacing: .05em;
+opacity: 0;
+animation: fade .8s forwards;
+}
 
-    .feat:nth-child(1) { animation-delay: 1.6s; }
-    .feat:nth-child(2) { animation-delay: 1.75s; }
-    .feat:nth-child(3) { animation-delay: 1.9s; }
+.feat:nth-child(1) { animation-delay: 1.6s; }
+.feat:nth-child(2) { animation-delay: 1.75s; }
+.feat:nth-child(3) { animation-delay: 1.9s; }
 
-    .ico {
-      width: clamp(38px, 7.6vh, 68px);
-      height: clamp(38px, 7.6vh, 68px);
-      border-radius: 28%;
-      display: grid;
-      place-items: center;
-      background: var(--glass);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(6px);
-      animation: bob 4s ease-in-out infinite;
-    }
+.ico {
+width: clamp(38px, 7.6vh, 68px);
+height: clamp(38px, 7.6vh, 68px);
+border-radius: 28%;
+display: grid;
+place-items: center;
+background: var(--glass);
+border: 1px solid var(--line);
+backdrop-filter: blur(6px);
+animation: bob 4s ease-in-out infinite;
+}
 
-    .feat:nth-child(2) .ico { animation-delay: .6s; }
-    .feat:nth-child(3) .ico { animation-delay: 1.2s; }
+.feat:nth-child(2) .ico { animation-delay: .6s; }
+.feat:nth-child(3) .ico { animation-delay: 1.2s; }
 
-    @keyframes bob {
-      50% { transform: translateY(-6px); }
-    }
+@keyframes bob {
+50% { transform: translateY(-6px); }
+}
 
-    .ico svg {
-      width: 46%;
-      height: 46%;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+.ico svg {
+width: 46%;
+height: 46%;
+stroke: var(--accent);
+fill: none;
+stroke-width: 1.8;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
 
-    .timer-box {
-      margin-top: clamp(12px, 2vh, 22px);
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--glass);
-    }
+.timer-box {
+margin-top: clamp(12px, 2vh, 22px);
+padding: 12px 16px;
+border: 1px solid var(--line);
+border-radius: 14px;
+background: var(--glass);
+}
 
-    .timer-text {
-      margin: 0;
-      color: var(--ink);
-      font-size: clamp(13px, 2vh, 17px);
-      font-weight: 700;
-    }
+.timer-text {
+margin: 0;
+color: var(--ink);
+font-size: clamp(13px, 2vh, 17px);
+font-weight: 700;
+}
 
-    #seconds {
-      color: var(--accent);
-      font-size: 1.3em;
-      font-variant-numeric: tabular-nums;
-    }
+#seconds {
+color: var(--accent);
+font-size: 1.3em;
+font-variant-numeric: tabular-nums;
+}
 
-    .timer-track {
-      height: 5px;
-      margin-top: 10px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(255,255,255,.15);
-    }
+.timer-track {
+height: 5px;
+margin-top: 10px;
+overflow: hidden;
+border-radius: 999px;
+background: rgba(255,255,255,.15);
+}
 
-    .timer-fill {
-      height: 100%;
-      width: 100%;
-      transform-origin: left;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    }
+.timer-fill {
+height: 100%;
+width: 100%;
+transform-origin: left;
+background: linear-gradient(90deg, var(--accent), var(--accent-2));
+transition: transform 0.1s linear;
+}
 
-    .cta {
-      position: relative;
-      overflow: hidden;
-      display: block;
-      margin-top: clamp(12px, 2vh, 22px);
-      padding: clamp(11px, 2.3vh, 20px);
-      border-radius: 14px;
-      text-decoration: none;
-      font-family: Montserrat, sans-serif;
-      font-weight: 800;
-      font-size: clamp(14px, 2.4vh, 20px);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: var(--on-accent);
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      box-shadow: 0 14px 40px rgba(251,191,36,.35);
-      animation: pulse 3s 3s ease-in-out infinite;
-      transition: transform .2s;
-    }
+.cta {
+position: relative;
+overflow: hidden;
+display: block;
+margin-top: clamp(12px, 2vh, 22px);
+padding: clamp(11px, 2.3vh, 20px);
+border-radius: 14px;
+text-decoration: none;
+font-family: Montserrat, sans-serif;
+font-weight: 800;
+font-size: clamp(14px, 2.4vh, 20px);
+text-transform: uppercase;
+letter-spacing: .12em;
+color: var(--on-accent);
+background: linear-gradient(90deg, var(--accent), var(--accent-2));
+box-shadow: 0 14px 40px rgba(251,191,36,.35);
+animation: pulse 3s 3s ease-in-out infinite;
+transition: transform .2s;
+}
 
-    .cta:hover {
-      transform: translateY(-2px) scale(1.01);
-    }
+.cta:hover {
+transform: translateY(-2px) scale(1.01);
+}
 
-    .cta:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 3px;
-    }
+.cta:focus-visible {
+outline: 3px solid #fff;
+outline-offset: 3px;
+}
 
-    .cta::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -60%;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(
-        100deg, transparent, rgba(255,255,255,.6), transparent
-      );
-      transform: skewX(-20deg);
-      animation: shine 3.5s 3s infinite;
-    }
+.cta::after {
+content: "";
+position: absolute;
+top: 0;
+left: -60%;
+width: 40%;
+height: 100%;
+background: linear-gradient(
+100deg, transparent, rgba(255,255,255,.6), transparent
+);
+transform: skewX(-20deg);
+animation: shine 3.5s 3s infinite;
+}
 
-    @keyframes shine {
-      0% { left: -60%; }
-      40%, 100% { left: 130%; }
-    }
+@keyframes shine {
+0% { left: -60%; }
+40%, 100% { left: 130%; }
+}
 
-    @keyframes pulse {
-      50% { box-shadow: 0 14px 50px rgba(245,158,11,.55); }
-    }
+@keyframes pulse {
+50% { box-shadow: 0 14px 50px rgba(245,158,11,.55); }
+}
 
-    .ads {
-      margin: clamp(8px, 2vh, 20px) 0 0;
-      font-size: clamp(11px, 1.8vh, 14px);
-      color: var(--muted);
-      opacity: 0;
-      animation: fade .8s 2.2s forwards;
-    }
+.ads {
+margin: clamp(8px, 2vh, 20px) 0 0;
+font-size: clamp(11px, 1.8vh, 14px);
+color: var(--muted);
+opacity: 0;
+animation: fade .8s 2.2s forwards;
+}
 
-    .ads a {
-      color: var(--accent);
-    }
+.ads a {
+color: var(--accent);
+}
 
-    footer {
-      margin-top: clamp(8px, 2vh, 22px);
-      padding-top: clamp(8px, 1.6vh, 18px);
-      border-top: 1px solid var(--line);
-      opacity: 0;
-      animation: fade .8s 2.3s forwards;
-    }
+footer {
+margin-top: clamp(8px, 2vh, 22px);
+padding-top: clamp(8px, 1.6vh, 18px);
+border-top: 1px solid var(--line);
+opacity: 0;
+animation: fade .8s 2.3s forwards;
+}
 
-    .disc {
-      font-size: clamp(9px, 1.35vh, 12px);
-      line-height: 1.5;
-      color: var(--muted);
-      margin: 0 0 clamp(6px, 1.2vh, 12px);
-    }
+.disc {
+font-size: clamp(9px, 1.35vh, 12px);
+line-height: 1.5;
+color: var(--muted);
+margin: 0 0 clamp(6px, 1.2vh, 12px);
+}
 
-    nav a {
-      color: var(--ink);
-      font-size: clamp(11px, 1.7vh, 14px);
-      text-decoration: none;
-      margin: 0 10px;
-    }
+nav a {
+color: var(--ink);
+font-size: clamp(11px, 1.7vh, 14px);
+text-decoration: none;
+margin: 0 10px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+text-decoration: underline;
+}
 
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: none; }
-    }
+@keyframes fade {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: none; }
+}
 
-    @media (max-width: 340px) {
-      h1 { font-size: 30px; }
-    }
+@media (max-width: 340px) {
+h1 { font-size: 30px; }
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-delay: 0s !important;
-        animation-iteration-count: 1 !important;
-        transition: none !important;
-      }
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: .01ms !important;
+animation-delay: 0s !important;
+animation-iteration-count: 1 !important;
+transition: none !important;
+}
 
-      h1 .c {
-        transform: none;
-      }
-    }
-  </style>
+h1 .c {
+transform: none;
+}
+}
+</style>
 </head>
 
 <body>
-  <div class="orb o1" aria-hidden="true"></div>
-  <div class="orb o2" aria-hidden="true"></div>
+<div class="orb o1" aria-hidden="true"></div>
+<div class="orb o2" aria-hidden="true"></div>
 
-  <main>
-    <h1 aria-label="Ready Anna">
-      <span class="w" aria-hidden="true">
-        <span class="c" style="--i:0">R</span>
-        <span class="c" style="--i:1">e</span>
-        <span class="c" style="--i:2">a</span>
-        <span class="c" style="--i:3">d</span>
-        <span class="c" style="--i:4">y</span>
-      </span>
-      <span class="w" aria-hidden="true">
-        <span class="c" style="--i:5">A</span>
-        <span class="c" style="--i:6">n</span>
-        <span class="c" style="--i:7">n</span>
-        <span class="c" style="--i:8">a</span>
-      </span>
-    </h1>
+<main>
+<h1 aria-label="Ready Anna">
+<span class="w" aria-hidden="true">
+<span class="c" style="--i:0">R</span>
+<span class="c" style="--i:1">e</span>
+<span class="c" style="--i:2">a</span>
+<span class="c" style="--i:3">d</span>
+<span class="c" style="--i:4">y</span>
+</span>
+<span class="w" aria-hidden="true">
+<span class="c" style="--i:5">A</span>
+<span class="c" style="--i:6">n</span>
+<span class="c" style="--i:7">n</span>
+<span class="c" style="--i:8">a</span>
+</span>
+</h1>
 
-    <p class="since">Since 2010</p>
-    <p class="tag">A certified educational platform</p>
+<p class="since">Since 2010</p>
+<p class="tag">A certified educational platform</p>
 
-    <div class="pill">
-      <span class="dot" aria-hidden="true"></span>
-      Mentor support, 24 hours a day
-    </div>
+<div class="pill">
+<span class="dot" aria-hidden="true"></span>
+Mentor support, 24 hours a day
+</div>
 
-    <h2>Join us today</h2>
-    <p class="sub">Thousands of subscribers have already joined.</p>
+<h2>Join us today</h2>
+<p class="sub">Thousands of subscribers have already joined.</p>
 
-    <div class="feats">
-      <div class="feat">
-        <div class="ico">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4H10a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H2z"/>
-            <path d="M22 5.5A1.5 1.5 0 0 0 20.5 4H14a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h8z"/>
-          </svg>
-        </div>
-        Learning hub
-      </div>
+<div class="feats">
+<div class="feat">
+<div class="ico">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M2 5.5A1.5 1.5 0 0 1 3.5 4H10a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H2z"/>
+<path d="M22 5.5A1.5 1.5 0 0 0 20.5 4H14a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h8z"/>
+</svg>
+</div>
+Learning hub
+</div>
 
-      <div class="feat">
-        <div class="ico">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/>
-            <path d="M8.5 12l2.5 2.5 4.5-5"/>
-          </svg>
-        </div>
-        Reliable system
-      </div>
+<div class="feat">
+<div class="ico">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/>
+<path d="M8.5 12l2.5 2.5 4.5-5"/>
+</svg>
+</div>
+Reliable system
+</div>
 
-      <div class="feat">
-        <div class="ico">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.2A8 8 0 1 1 21 12z"/>
-          </svg>
-        </div>
-        Expert panels
-      </div>
-    </div>
+<div class="feat">
+<div class="ico">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.2A8 8 0 1 1 21 12z"/>
+</svg>
+</div>
+Expert panels
+</div>
+</div>
 
-    <!-- 5-second countdown -->
-    <div class="timer-box" id="timer-box" hidden>
-      <p class="timer-text" id="timer-message" role="status" aria-live="polite">
-        Redirecting in <span id="seconds">5</span> seconds…
-      </p>
-      <div class="timer-track" aria-hidden="true">
-        <div class="timer-fill" id="timer-fill"></div>
-      </div>
-    </div>
+<!-- 5-second countdown -->
+<div class="timer-box" id="timer-box" hidden>
+<p class="timer-text" id="timer-message" role="status" aria-live="polite">
+Redirecting in <span id="seconds">5</span> seconds…
+</p>
+<div class="timer-track" aria-hidden="true">
+<div class="timer-fill" id="timer-fill"></div>
+</div>
+</div>
 
-    <!-- WhatsApp Button -->
-    <a class="cta" id="get-started" href="https://wa.me/918239510693" target="_blank" rel="noopener noreferrer">
-      Get started on WhatsApp
-    </a>
+<!-- WhatsApp Button -->
+<a class="cta" id="get-started" href="https://wa.me/918239510693" target="_blank" rel="noopener noreferrer">
+Get started on WhatsApp
+</a>
 
-    <noscript>
-      <p>Tap “Get started on WhatsApp” to continue.</p>
-    </noscript>
+<noscript>
+<p>Tap “Get started on WhatsApp” to continue.</p>
+</noscript>
 
-    <p class="ads">
-      Ads managed by
-      <a
-        href="https://wa.me/918239510693"
-        target="_blank"
-        rel="noopener noreferrer"
-      >@Nexgroww_agency</a>
-    </p>
+<p class="ads">
+Ads managed by
+<a
+href="https://wa.me/918239510693"
+target="_blank"
+rel="noopener noreferrer"
+>@Nexgroww_agency</a>
+</p>
 
-    <footer>
-      <p class="disc">
-        <strong>Disclaimer:</strong>
-        This is an independent informational page. We are not affiliated
-        with any third-party service. Use of any linked platform is at your
-        own discretion and responsibility. No guarantees of any kind are made.
-      </p>
+<footer>
+<p class="disc">
+<strong>Disclaimer:</strong>
+This is an independent informational page. We are not affiliated
+with any third-party service. Use of any linked platform is at your
+own discretion and responsibility. No guarantees of any kind are made.
+</p>
 
-      <nav aria-label="Footer">
-        <a
-          href="https://wa.me/918239510693"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Privacy policy</a>
-        |
-        <a
-          href="https://wa.me/918239510693"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Contact us</a>
-      </nav>
-    </footer>
-  </main>
+<nav aria-label="Footer">
+<a
+href="https://wa.me/918239510693"
+target="_blank"
+rel="noopener noreferrer"
+>Privacy policy</a>
+|
+<a
+href="https://wa.me/918239510693"
+target="_blank"
+rel="noopener noreferrer"
+>Contact us</a>
+</nav>
+</footer>
+</main>
 
-  <!-- Countdown and automatic redirect -->
-  <script>
-    (() => {
-    //  const button = document.getElementById("get-started");
-      const timerBox = document.getElementById("timer-box");
-      const secondsElement = document.getElementById("seconds");
-      const message = document.getElementById("timer-message");
-     // const fill = document.getElementById("timer-fill");
+<!-- Countdown and automatic redirect -->
+<script>
+(() => {
+  const button = document.getElementById("get-started");
+  const timerBox = document.getElementById("timer-box");
+  const secondsElement = document.getElementById("seconds");
+  const message = document.getElementById("timer-message");
+  const fill = document.getElementById("timer-fill");
 
-      const redirectURL = button.href;
-   //  const duration = 5000;
-      const deadline = Date.now() + duration;
-      let lastSecond = 5;
-      let redirected = false;
+  const redirectURL = button.href;
+  const duration = 5000; // 5 seconds
+  const deadline = Date.now() + duration;
+  let lastSecond = 5;
+  let redirected = false;
 
-      timerBox.hidden = false;
+  // Show the timer box
+  timerBox.hidden = false;
 
-      const interval = window.setInterval(() => {
-        const remaining = Math.max(0, deadline - Date.now());
-        const seconds = Math.ceil(remaining / 1000);
+  const interval = window.setInterval(() => {
+    const remaining = Math.max(0, deadline - Date.now());
+    const seconds = Math.ceil(remaining / 1000);
 
-        fill.style.transform = `scaleX(${remaining / duration})`;
+    // Update progress bar
+    fill.style.transform = `scaleX(${remaining / duration})`;
 
-        if (seconds !== lastSecond) {
-          secondsElement.textContent = String(seconds);
-          lastSecond = seconds;
-        }
+    // Update seconds text only when it changes
+    if (seconds !== lastSecond) {
+      secondsElement.textContent = String(seconds);
+      lastSecond = seconds;
+    }
 
-        //if (remaining === 0 && !redirected) {
-          redirected = true;
-          window.clearInterval(interval);
-          message.textContent = "Redirecting now…";
-          window.location.replace(redirectURL);
-        }
-    //  }, 100);
+    // When timer ends → redirect
+    if (remaining === 0 && !redirected) {
+      redirected = true;
+      window.clearInterval(interval);
+      message.textContent = "Redirecting now…";
+      window.location.replace(redirectURL);
+    }
+  }, 50); // smooth progress bar
 
-      //button.addEventListener("click", () => {
-      //  window.clearInterval(interval);
-     // });
-    })();
-  </script>
+  // If user clicks the button early, stop the timer
+  button.addEventListener("click", () => {
+    window.clearInterval(interval);
+  });
+})();
+</script>
 
 <!-- Meta Pixel Code -->
 <script>
